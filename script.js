@@ -87,23 +87,69 @@
 //       console.log("All tasks are completed!");
 //     });
 // promises
-let myPromise = new Promise(function(resolve, reject) {
-    let success = true; // Assume we are checking if some task was successful
+// let myPromise = new Promise(function(resolve, reject) {
+//     let success = true; // Assume we are checking if some task was successful
     
-    if (success) {
-      resolve("Task completed successfully!");  // Operation successful
-    } else {
-      reject("Task failed!");  // Operation failed
+//     if (success) {
+//       resolve("Task completed successfully!");  // Operation successful
+//     } else {
+//       reject("Task failed!");  // Operation failed
+//     }
+//   });
+  
+//   myPromise
+//     .then(function(result) {
+//       console.log(result);  // If resolved, result will be passed here
+//     })
+//     .catch(function(error) {
+//       console.log(error);  // If rejected, error will be passed here
+//     });
+  // clas object 
+  class Student {
+    constructor(name, age) {
+        this.name = name; // Property
+        this.age = age;   // Property
     }
-  });
+
+    introduce() {
+        return `Mera naam ${this.name} hai aur meri age ${this.age} hai.`; // Method
+    }
+}
+
+// Objects banate hain
+const student1 = new Student('Arifa', 20);
+const student2 = new Student('Asima', 22);
+
+console.log(student1.introduce()); // Output: Mera naam Arifa hai aur meri age 20 hai.
+console.log(student2.introduce()); // Output: Mera naam Asima hai aur meri age 22 hai.
+
   
-  myPromise
-    .then(function(result) {
-      console.log(result);  // If resolved, result will be passed here
-    })
-    .catch(function(error) {
-      console.log(error);  // If rejected, error will be passed here
-    });
-  
-  
-  
+  // constructor
+  class Car {
+    constructor(brand, model) {
+        this.brand = brand; // Property
+        this.model = model; // Property
+    }
+
+    start() {
+        return `${this.brand} ${this.model} start ho gayi hai.`; // Method
+    }
+}
+
+// Object banate hain
+const car1 = new Car('Toyota', 'Corolla');
+console.log(car1.start()); // Output: Toyota Corolla start ho gayi hai.
+// static 
+class MathOperations {
+  static add(a, b) { // Static method
+      return a + b;
+  }
+
+  static multiply(a, b) { // Static method
+      return a * b;
+  }
+}
+
+// Directly class ka naam use karke methods ko call karte hain
+console.log(MathOperations.add(5, 3)); // Output: 8
+console.log(MathOperations.multiply(5, 3)); // Output: 15
